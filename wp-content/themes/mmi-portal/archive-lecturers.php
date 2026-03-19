@@ -15,7 +15,7 @@ get_header();
         
         <header class="archive-header">
             <h1 class="archive-header__title">
-                <?php esc_html_e('Викладачі кафедри', 'mmi-portal'); ?>
+                <?php esc_html_e('Викладачі інституту', 'mmi-portal'); ?>
             </h1>
             <?php if (get_the_archive_description()): ?>
                 <div class="archive-header__description">

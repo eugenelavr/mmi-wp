@@ -2,8 +2,8 @@
 /**
  * Plugin Name: MMI Data Architecture
  * Plugin URI: https://mmi.kpi.ua
- * Description: Custom Post Types and ACF Field Groups for MMI University Portal (Lecturers, Courses, Publications)
- * Version: 1.0.0
+ * Description: Custom Post Types and ACF Field Groups for ММІ KPI portal (Lecturers, Courses, Publications, Events)
+ * Version: 1.1.0
  * Author: MMI Development Team
  * Text Domain: mmi-portal
  * Domain Path: /languages
@@ -38,6 +38,7 @@ class MMI_Data_Plugin {
         require_once __DIR__ . '/includes/post-types/lecturers.php';
         require_once __DIR__ . '/includes/post-types/courses.php';
         require_once __DIR__ . '/includes/post-types/publications.php';
+        require_once __DIR__ . '/includes/post-types/events.php';
     }
     
     /**
@@ -51,6 +52,7 @@ class MMI_Data_Plugin {
         require_once __DIR__ . '/includes/acf/lecturers-fields.php';
         require_once __DIR__ . '/includes/acf/courses-fields.php';
         require_once __DIR__ . '/includes/acf/publications-fields.php';
+        require_once __DIR__ . '/includes/acf/events-fields.php';
     }
 }
 

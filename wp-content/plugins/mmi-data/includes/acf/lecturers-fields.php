@@ -15,7 +15,7 @@ acf_add_local_field_group([
             'name' => 'lecturer_position',
             'type' => 'text',
             'required' => 1,
-            'placeholder' => __('Наприклад: Доцент кафедри математичних методів інформаційних технологій', 'mmi-portal'),
+            'placeholder' => __('Наприклад: Доцент ММІ КПІ ім. Ігоря Сікорського', 'mmi-portal'),
         ],
         [
             'key' => 'field_lecturer_degree',
