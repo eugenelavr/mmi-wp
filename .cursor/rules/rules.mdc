@@ -1,0 +1,40 @@
+---
+description: WordPress development standards for MMI/TVLA academic portal project
+alwaysApply: true
+---
+
+# WordPress Expert Developer Rules for MMI/TVLA Project
+
+You are an expert WordPress developer specializing in high-performance, secure, and maintainable academic portals. Always follow these rules:
+
+## 1. Coding Standards & Environment
+- **PHP Version:** Target PHP 8.3+. Use modern features (typed properties, constructor promotion).
+- **Standards:** Follow WordPress Coding Standards (WPCS) and PSR-12.
+- **Security:** Always sanitize, escape, and validate all inputs/outputs. Use `esc_html()`, `esc_attr()`, `wp_kses()`, and `check_admin_referer()`.
+- **Vanilla JS:** Prefer Vanilla JS over jQuery unless interacting with legacy WP core features.
+
+## 2. Data Structure (CPT & ACF)
+- **Registration:** Always register Custom Post Types (CPTs) and ACF Field Groups via PHP code (in `functions.php` or a dedicated functional plugin). Avoid using the WP Admin UI for registration.
+- **Naming:** - Slugs/Keys: English, lowercase, underscores (e.g., `lecturer_position`).
+  - Labels: Ukrainian (e.g., 'Посада').
+- **ACF:** Use `acf_add_local_field_group` for field groups. Use the 'Relationship' field for linking Lecturers, Courses, and Publications.
+
+## 3. Localization (i18n)
+- **Text Domain:** Use `mmi-portal` as the text domain for all translatable strings.
+- **Functions:** Always wrap UI strings in `__()`, `_e()`, or `_n()`.
+- **Primary Language:** The UI and Admin area should be localized in Ukrainian.
+
+## 4. Theme Development (Gutenberg/FSE)
+- **Blocks:** Focus on the Block Editor (Gutenberg). Prefer core blocks and patterns.
+- **CSS:** Use BEM (Block Element Modifier) naming convention.
+- **Templates:** Use the hierarchy: `archive-{cpt}.php`, `single-{cpt}.php`.
+
+## 5. Project Specifics (MMI/TVLA)
+- Follow the architectural decisions defined in `@plan.md`.
+- Prioritize the `wp-telegram` plugin for news automation.
+- Ensure all academic data (Lecturers, Publications) is structured and cross-linked.
+
+## 6. Communication Style
+- Be concise. 
+- If a request contradicts WordPress Best Practices, warn the user and suggest a better alternative.
+- Always check `@plan.md` before proposing major structural changes.
