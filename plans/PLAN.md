@@ -8,11 +8,11 @@
 - [x] Configure volume mapping for `./wp-content` and local theme folder.
 - [x] Install WordPress via WP-CLI with Ukrainian as default locale.
 
-## Phase 2: Data Architecture (CPT & ACF)
-- [ ] Register **Lecturers (`lecturers`)**: Fields for position, degree, contacts, scholar links.
-- [ ] Register **Courses (`courses`)**: Fields for edu level, credits, syllabus PDF.
-- [ ] Register **Publications (`publications`)**: Fields for year, type, DOI.
-- [ ] Setup Relationship fields: Connect Lecturers to their Courses and Publications.
+## Phase 2: Data Architecture (CPT & ACF) ✅
+- [x] Register **Lecturers (`lecturers`)**: Fields for position, degree, contacts, scholar links.
+- [x] Register **Courses (`courses`)**: Fields for edu level, credits, syllabus PDF.
+- [x] Register **Publications (`publications`)**: Fields for year, type, DOI.
+- [x] Setup Relationship fields: Connect Lecturers to their Courses and Publications.
 
 ## Phase 3: Telegram-to-News Integration
 - [ ] Install & Configure `WP Telegram` plugin.

@@ -57,7 +57,22 @@ docker exec -it mmi_app wp core install \
 - mysqli (database connection)
 - zip (file compression)
 
-## Next Steps (Phase 2)
-- Register Custom Post Types (Lecturers, Courses, Publications)
-- Setup ACF Field Groups
-- Configure relationships between CPTs
+## Next Steps (Phase 2) ✅
+Phase 2 Complete! See `docs/PHASE-2-SUMMARY.md` for details.
+
+**Custom Post Types Registered:**
+- Lecturers (`lecturers`) - Викладачі з повною біографією
+- Courses (`courses`) - Навчальні курси з силабусами  
+- Publications (`publications`) - Наукові публікації
+
+**Plugin Created:** `wp-content/plugins/mmi-data/`
+
+**To activate:**
+1. Install ACF Pro plugin
+2. Activate "MMI Data Architecture" plugin in WP Admin
+3. Go to Settings → Permalinks → Save
+
+## Next Steps (Phase 3)
+- Telegram-to-News Integration
+- Configure WP Telegram plugin
+- Setup bot connection to MMI channel

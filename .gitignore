@@ -22,8 +22,8 @@ wp-content/ai1wm-backups/
 # Plugins (ignore third-party, track custom ones)
 wp-content/plugins/*
 !wp-content/plugins/.gitkeep
-# Uncomment to track specific custom plugins:
-# !wp-content/plugins/mmi-custom-plugin/
+# Track custom MMI plugin
+!wp-content/plugins/mmi-data/
 
 # Themes (ignore third-party, track custom ones)
 wp-content/themes/*
