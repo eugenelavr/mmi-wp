@@ -17,4 +17,7 @@ RUN apt-get update && apt-get install -y \
 # Copy WordPress installation scripts
 COPY install-wp.sh /usr/local/bin/install-wp.sh
 COPY install-wptelegram.sh /usr/local/bin/install-wptelegram.sh
-RUN chmod +x /usr/local/bin/install-wp.sh /usr/local/bin/install-wptelegram.sh
+COPY install-phase5-plugins.sh /usr/local/bin/install-phase5-plugins.sh
+RUN chmod +x /usr/local/bin/install-wp.sh \
+             /usr/local/bin/install-wptelegram.sh \
+             /usr/local/bin/install-phase5-plugins.sh

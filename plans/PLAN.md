@@ -28,7 +28,7 @@
    - `single-courses`: Details + Link to Lecturer.
 - [x] Setup Main Menu & Footer (KPI Branding).
 
-## Phase 5: Polylang & Final Polish
-- [ ] Enable UA (Primary) and EN (Secondary) languages.
-- [ ] Translate all CPT labels and ACF fields.
-- [ ] Hardening: Wordfence, backups (UpdraftPlus), SSL config.
+## Phase 5: Polylang & Final Polish ✅
+- [x] Enable UA (Primary) and EN (Secondary) languages.
+- [x] Translate all CPT labels and ACF fields.
+- [x] Hardening: Wordfence, backups (UpdraftPlus), SSL config.
