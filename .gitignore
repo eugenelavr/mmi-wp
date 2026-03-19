@@ -1,0 +1,87 @@
+# WordPress Core Files
+# (if WordPress core gets downloaded into the project)
+/wordpress/
+/wp-admin/
+/wp-includes/
+wp-*.php
+xmlrpc.php
+license.txt
+readme.html
+
+# wp-config.php (contains sensitive database credentials)
+wp-config.php
+
+# wp-content: selective ignoring
+wp-content/uploads/*
+!wp-content/uploads/.gitkeep
+wp-content/cache/
+wp-content/backups/
+wp-content/upgrade/
+wp-content/ai1wm-backups/
+
+# Plugins (ignore third-party, track custom ones)
+wp-content/plugins/*
+!wp-content/plugins/.gitkeep
+# Uncomment to track specific custom plugins:
+# !wp-content/plugins/mmi-custom-plugin/
+
+# Themes (ignore third-party, track custom ones)
+wp-content/themes/*
+!wp-content/themes/.gitkeep
+# Uncomment to track your custom theme:
+# !wp-content/themes/mmi-portal-theme/
+
+# Environment & Docker
+.env
+.env.local
+.env.*.local
+
+# Database dumps
+*.sql
+*.sql.gz
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+.directory
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+error_log
+access_log
+
+# Build tools
+node_modules/
+vendor/
+composer.phar
+package-lock.json
+yarn.lock
+
+# Temporary files
+*.tmp
+*.bak
+*.cache
+
+# Track your custom theme
+!wp-content/themes/mmi-portal-theme/
