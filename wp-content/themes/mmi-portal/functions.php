@@ -229,6 +229,15 @@ add_filter('generate_sidebar_layout', function (): string {
 });
 
 /**
+ * Translate a string using Polylang when available, otherwise fall back to gettext.
+ * Use this instead of __() for strings whose translations are managed via
+ * Languages → String Translations in the WP admin (pll_register_string / pll__).
+ */
+function mmi_t(string $string, string $domain = 'mmi-portal'): string {
+    return function_exists('pll__') ? pll__($string) : __($string, $domain);
+}
+
+/**
  * Get ACF option value with a fallback default.
  */
 function mmi_option(string $key, mixed $default = ''): mixed {

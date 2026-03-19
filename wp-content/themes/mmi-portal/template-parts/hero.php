@@ -9,11 +9,19 @@
 
 defined('ABSPATH') || exit;
 
+// Register fallback strings with Polylang so they appear in Languages → String translations.
+if (function_exists('pll_register_string')) {
+    pll_register_string('hero_title',    'Механіко-машинобудівний інститут КПІ ім. Ігоря Сікорського', 'mmi-portal');
+    pll_register_string('hero_subtitle', 'Механіко-машинобудівний інститут КПІ ім. Ігоря Сікорського', 'mmi-portal');
+    pll_register_string('hero_cta_text', 'Дізнатись більше',                                           'mmi-portal');
+    pll_register_string('hero_cta2',     'Наші викладачі',                                             'mmi-portal');
+}
+
 $hero_image    = mmi_option('hero_image', []);
 $hero_label    = mmi_option('hero_label', '');
-$hero_title    = mmi_option('hero_title', get_bloginfo('name'));
-$hero_subtitle = mmi_option('hero_subtitle', __('Механіко-машинобудівний інститут КПІ ім. Ігоря Сікорського', 'mmi-portal'));
-$hero_cta_text = mmi_option('hero_cta_text', __('Дізнатись більше', 'mmi-portal'));
+$hero_title    = mmi_option('hero_title', mmi_t('Механіко-машинобудівний інститут КПІ ім. Ігоря Сікорського'));
+$hero_subtitle = mmi_option('hero_subtitle', mmi_t('Механіко-машинобудівний інститут КПІ ім. Ігоря Сікорського'));
+$hero_cta_text = mmi_option('hero_cta_text', mmi_t('Дізнатись більше'));
 $hero_cta_url  = mmi_option('hero_cta_url', home_url('/about/'));
 
 $hero_image_url = is_array($hero_image) && !empty($hero_image['url']) ? $hero_image['url'] : '';
@@ -37,11 +45,11 @@ $style_attr     = $hero_image_url ? ' style="background-image: url(' . esc_url($
         <div class="hero__actions">
             <?php if ($hero_cta_url): ?>
                 <a href="<?php echo esc_url($hero_cta_url); ?>" class="btn btn--primary">
-                    <?php echo esc_html($hero_cta_text ?: __('Дізнатись більше', 'mmi-portal')); ?>
+                    <?php echo esc_html($hero_cta_text ?: mmi_t('Дізнатись більше')); ?>
                 </a>
             <?php endif; ?>
             <a href="<?php echo esc_url(home_url('/lecturers/')); ?>" class="btn btn--outline">
-                <?php esc_html_e('Наші викладачі', 'mmi-portal'); ?>
+                <?php echo esc_html(mmi_t('Наші викладачі')); ?>
             </a>
         </div>
 
