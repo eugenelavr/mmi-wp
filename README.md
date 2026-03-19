@@ -174,6 +174,65 @@ mmi-wp/
 - ✅ Clean BEM CSS
 - ✅ Minimal JavaScript
 
+## Deploy to Railway
+
+Railway gives you a Vercel-like deploy experience: connect your GitHub repo and it auto-deploys on every push.
+
+### 1. Create a Railway Project
+
+1. Sign up at [railway.com](https://railway.com) and create a new project.
+2. Choose **"Deploy from GitHub repo"** and select your `mmi-wp` repository.
+3. Railway auto-detects the `Dockerfile` and starts building.
+
+### 2. Add a MySQL Database
+
+1. In the Railway project dashboard, click **"+ New"** → **"Database"** → **"MySQL"**.
+2. Railway provisions a managed MySQL instance automatically.
+
+### 3. Set Environment Variables
+
+On the WordPress service, add these env vars referencing the MySQL service:
+
+| Variable | Value |
+|----------|-------|
+| `WORDPRESS_DB_HOST` | `${{MySQL.MYSQL_HOST}}` |
+| `WORDPRESS_DB_USER` | `${{MySQL.MYSQL_USER}}` |
+| `WORDPRESS_DB_PASSWORD` | `${{MySQL.MYSQL_PASSWORD}}` |
+| `WORDPRESS_DB_NAME` | `${{MySQL.MYSQL_DATABASE}}` |
+| `WORDPRESS_URL` | Your Railway URL (e.g. `https://mmi-wp-production.up.railway.app`) |
+| `WORDPRESS_ADMIN_USER` | `admin` |
+| `WORDPRESS_ADMIN_PASSWORD` | A strong password |
+| `WORDPRESS_ADMIN_EMAIL` | `admin@mmi.kpi.ua` |
+
+### 4. Add a Persistent Volume
+
+In the WordPress service settings, add a volume mounted at `/var/www/html/wp-content/uploads` to persist uploaded media across deploys.
+
+### 5. Deploy and Install WordPress
+
+1. Railway builds and deploys automatically. You'll get a `*.up.railway.app` URL.
+2. Open the Railway shell for the WordPress service and run:
+   ```bash
+   install-wp.sh
+   ```
+3. Install the parent theme and activate the child theme:
+   ```bash
+   wp theme install generatepress --allow-root
+   wp theme activate mmi-portal --allow-root
+   ```
+
+### 6. (Optional) Custom Domain
+
+In Railway service settings → **"Custom Domain"**, add your domain (e.g. `mmi.kpi.ua`). Railway provides free SSL automatically.
+
+### Cost
+
+- **Trial**: $5 free credit (~1 month for a small site)
+- **After trial**: ~$5-7/month (WordPress container + MySQL + volume)
+- **Custom domain + SSL**: free
+
+---
+
 ## Next Steps (Post-Implementation)
 
 1. **Content Creation**

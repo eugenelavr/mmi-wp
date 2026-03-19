@@ -1,0 +1,6 @@
+docs/
+plans/
+*.sql
+*.sql.gz
+.cursor/
+agent-transcripts/
