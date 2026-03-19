@@ -160,8 +160,32 @@ button {
     padding-inline: var(--container-padding);
 }
 
+/* Override GeneratePress float/flex sidebar layout — our templates are always full-width */
+#content.site-content,
 .site-content {
     min-height: 50vh;
+    display: block !important;
+    width: 100% !important;
+    float: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+}
+
+#main.site-main,
+.site-main {
+    width: 100% !important;
+    max-width: 100% !important;
+    float: none !important;
+    margin: 0 !important;
+}
+
+/* Hide any sidebar GeneratePress may try to render */
+#secondary,
+.widget-area,
+.is-right-sidebar,
+.is-left-sidebar {
+    display: none !important;
 }
 
 /* ==========================================================================
@@ -710,7 +734,70 @@ button {
 }
 
 /* ==========================================================================
-   6. Hero Section
+   6. Header Quick-Nav Band
+   ========================================================================== */
+
+.header-quicknav {
+    background: var(--color-navy-dark);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header-quicknav__inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.header-quicknav__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-6);
+    color: var(--color-on-dark-muted);
+    text-decoration: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.header-quicknav__item:last-child {
+    border-right: none;
+}
+
+.header-quicknav__item:hover,
+.header-quicknav__item:focus-visible {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--color-on-dark);
+}
+
+.header-quicknav__icon {
+    flex-shrink: 0;
+    display: flex;
+    color: var(--color-accent);
+}
+
+.header-quicknav__label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+@media (max-width: 767px) {
+    .header-quicknav__inner {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .header-quicknav__item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .header-quicknav__item:nth-child(odd) {
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .header-quicknav__item:last-child,
+    .header-quicknav__item:nth-last-child(2):nth-child(odd) {
+        border-bottom: none;
+    }
+}
+
+/* ==========================================================================
+   7. Hero Section
    ========================================================================== */
 
 .hero {

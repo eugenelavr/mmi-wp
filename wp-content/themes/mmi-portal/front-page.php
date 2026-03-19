@@ -5,7 +5,6 @@
  * Sections:
  *  1. Hero
  *  2. News grid with category tabs
- *  3. Quick-access priorities
  *  4. Feature story (full-width)
  *  5. Events
  *  6. About / department stats
@@ -111,44 +110,6 @@ get_header();
         wp_reset_postdata();
     endif; // $news_query
     ?>
-
-    <?php
-    // =========================================================================
-    // 3. QUICK ACCESS — PRIORITY CARDS
-    // =========================================================================
-    $priority_cards = mmi_option('priority_cards', []);
-
-    // Default fallback cards
-    $default_cards = [
-        ['title' => __('Викладачі', 'mmi-portal'),          'desc' => __('Наш науково-педагогічний склад', 'mmi-portal'),        'url' => home_url('/lecturers/'),    'image' => '', 'icon' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>'],
-        ['title' => __('Навчальні курси', 'mmi-portal'),     'desc' => __('Бакалаврські та магістерські програми', 'mmi-portal'), 'url' => home_url('/courses/'),      'image' => '', 'icon' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>'],
-        ['title' => __('Публікації', 'mmi-portal'),          'desc' => __('Наукові праці та статті', 'mmi-portal'),               'url' => home_url('/publications/'), 'image' => '', 'icon' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>'],
-        ['title' => __('Вступникам', 'mmi-portal'),          'desc' => __('Умови та правила вступу', 'mmi-portal'),               'url' => home_url('/admissions/'),   'image' => '', 'icon' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>'],
-    ];
-
-    // Merge ACF cards over defaults
-    if (!empty($priority_cards) && is_array($priority_cards)) {
-        foreach ($priority_cards as $i => $acf_card) {
-            if (!empty($acf_card['title'])) {
-                $default_cards[$i] = [
-                    'title' => $acf_card['title'],
-                    'desc'  => $acf_card['desc'] ?? '',
-                    'url'   => $acf_card['url']   ?? '#',
-                    'image' => $acf_card['image']  ?? '',
-                    'icon'  => $default_cards[$i]['icon'] ?? '',
-                ];
-            }
-        }
-    }
-    ?>
-
-    <section class="priorities">
-        <div class="priorities__grid">
-            <?php foreach ($default_cards as $card): ?>
-                <?php get_template_part('template-parts/priority-card', null, $card); ?>
-            <?php endforeach; ?>
-        </div>
-    </section>
 
     <?php
     // =========================================================================

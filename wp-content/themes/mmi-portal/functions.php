@@ -220,6 +220,15 @@ function mmi_get_course_lecturer(int $course_id): ?WP_Post {
 }
 
 /**
+ * Force GeneratePress to use a no-sidebar, full-width layout on all pages
+ * managed by the child theme's custom templates (front page, archives, singles).
+ * This removes the ~37% sidebar reservation that GeneratePress applies by default.
+ */
+add_filter('generate_sidebar_layout', function (): string {
+    return 'no-sidebar';
+});
+
+/**
  * Get ACF option value with a fallback default.
  */
 function mmi_option(string $key, mixed $default = ''): mixed {
