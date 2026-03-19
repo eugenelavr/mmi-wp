@@ -1,0 +1,15 @@
+/*
+Theme Name: MMI Portal
+Theme URI: https://mmi.kpi.ua
+Description: Child theme for MMI University Portal based on GeneratePress. Features custom templates for Lecturers, Courses, and Publications.
+Author: MMI Development Team
+Author URI: https://mmi.kpi.ua
+Template: generatepress
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: mmi-portal
+Domain Path: /languages
+*/
+
+/* This file is intentionally left minimal - main styles are loaded via functions.php */

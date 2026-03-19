@@ -28,8 +28,8 @@ wp-content/plugins/*
 # Themes (ignore third-party, track custom ones)
 wp-content/themes/*
 !wp-content/themes/.gitkeep
-# Uncomment to track your custom theme:
-# !wp-content/themes/mmi-portal-theme/
+# Track custom MMI theme
+!wp-content/themes/mmi-portal/
 
 # Environment & Docker
 .env

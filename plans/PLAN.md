@@ -20,13 +20,13 @@
 - [x] Map incoming posts to the "News" category.
 - [x] Test automatic Featured Image extraction.
 
-## Phase 4: Frontend Development
-- [ ] Create a Child Theme (based on Astra or GeneratePress).
-- [ ] Build Archive templates for Lecturers and Courses.
-- [ ] Build Single templates:
-    - `single-lecturers`: Bio + Auto-list of Courses/Publications.
-    - `single-courses`: Details + Link to Lecturer.
-- [ ] Setup Main Menu & Footer (KPI Branding).
+## Phase 4: Frontend Development ✅
+- [x] Create a Child Theme (based on Astra or GeneratePress).
+- [x] Build Archive templates for Lecturers and Courses.
+- [x] Build Single templates:
+   - `single-lecturers`: Bio + Auto-list of Courses/Publications.
+   - `single-courses`: Details + Link to Lecturer.
+- [x] Setup Main Menu & Footer (KPI Branding).
 
 ## Phase 5: Polylang & Final Polish
 - [ ] Enable UA (Primary) and EN (Secondary) languages.

@@ -57,23 +57,33 @@ docker exec -it mmi_app wp core install \
 - mysqli (database connection)
 - zip (file compression)
 
-## Next Steps (Phase 3) ✅
-Phase 3 Complete! See `docs/PHASE-3-GUIDE.md` for complete setup instructions.
+## Next Steps (Phase 4) ✅
+Phase 4 Complete! See `docs/PHASE-4-SUMMARY.md` for complete details.
 
-**Telegram Integration:**
-- WP Telegram plugin for automatic posting
-- WordPress posts → Telegram channel automation
-- Featured image support
-- News category integration
+**Custom Theme Created: `mmi-portal`**
+- Based on GeneratePress parent theme
+- Archive templates for Lecturers, Courses, Publications
+- Single templates with ACF relationship displays
+- BEM CSS methodology with KPI branding
+- Responsive design with Ukrainian UI
+- Footer credits with KPI branding
 
-**Setup required:**
-1. Run: `docker exec -it mmi_app install-wptelegram.sh`
-2. Create Telegram bot via @BotFather
-3. Configure plugin with bot token and channel
-4. See `docs/PHASE-3-GUIDE.md` for step-by-step guide
+**Templates:**
+- `archive-lecturers.php` - Grid of lecturers
+- `archive-courses.php` - List of courses
+- `archive-publications.php` - List of publications
+- `single-lecturers.php` - Profile + linked courses/publications
+- `single-courses.php` - Details + linked lecturer
+- `single-publications.php` - Full publication data
 
-## Next Steps (Phase 4)
-- Frontend Development
-- Create Child Theme (Astra or GeneratePress)
-- Build archive and single templates
-- Setup Main Menu & Footer with KPI branding
+**To activate:**
+1. Install GeneratePress: `wp theme install generatepress --activate --allow-root`
+2. Activate child theme: `wp theme activate mmi-portal --allow-root`
+3. Set up menus in WP Admin → Appearance → Menus
+
+## Next Steps (Phase 5)
+- Polylang multilingual (UA/EN)
+- Security: Wordfence
+- Backups: UpdraftPlus
+- SSL configuration
+- Final polish and optimization
