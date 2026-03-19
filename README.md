@@ -57,22 +57,23 @@ docker exec -it mmi_app wp core install \
 - mysqli (database connection)
 - zip (file compression)
 
-## Next Steps (Phase 2) ✅
-Phase 2 Complete! See `docs/PHASE-2-SUMMARY.md` for details.
+## Next Steps (Phase 3) ✅
+Phase 3 Complete! See `docs/PHASE-3-GUIDE.md` for complete setup instructions.
 
-**Custom Post Types Registered:**
-- Lecturers (`lecturers`) - Викладачі з повною біографією
-- Courses (`courses`) - Навчальні курси з силабусами  
-- Publications (`publications`) - Наукові публікації
+**Telegram Integration:**
+- WP Telegram plugin for automatic posting
+- WordPress posts → Telegram channel automation
+- Featured image support
+- News category integration
 
-**Plugin Created:** `wp-content/plugins/mmi-data/`
+**Setup required:**
+1. Run: `docker exec -it mmi_app install-wptelegram.sh`
+2. Create Telegram bot via @BotFather
+3. Configure plugin with bot token and channel
+4. See `docs/PHASE-3-GUIDE.md` for step-by-step guide
 
-**To activate:**
-1. Install ACF Pro plugin
-2. Activate "MMI Data Architecture" plugin in WP Admin
-3. Go to Settings → Permalinks → Save
-
-## Next Steps (Phase 3)
-- Telegram-to-News Integration
-- Configure WP Telegram plugin
-- Setup bot connection to MMI channel
+## Next Steps (Phase 4)
+- Frontend Development
+- Create Child Theme (Astra or GeneratePress)
+- Build archive and single templates
+- Setup Main Menu & Footer with KPI branding

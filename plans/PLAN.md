@@ -14,11 +14,11 @@
 - [x] Register **Publications (`publications`)**: Fields for year, type, DOI.
 - [x] Setup Relationship fields: Connect Lecturers to their Courses and Publications.
 
-## Phase 3: Telegram-to-News Integration
-- [ ] Install & Configure `WP Telegram` plugin.
-- [ ] Setup Bot connection to the MMI Telegram channel.
-- [ ] Map incoming posts to the "News" category.
-- [ ] Test automatic Featured Image extraction.
+## Phase 3: Telegram-to-News Integration ✅
+- [x] Install & Configure `WP Telegram` plugin.
+- [x] Setup Bot connection to the MMI Telegram channel.
+- [x] Map incoming posts to the "News" category.
+- [x] Test automatic Featured Image extraction.
 
 ## Phase 4: Frontend Development
 - [ ] Create a Child Theme (based on Astra or GeneratePress).
