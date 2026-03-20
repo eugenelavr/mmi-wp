@@ -178,7 +178,9 @@ mmi-wp/
 
 Railway gives you a Vercel-like deploy experience: connect your GitHub repo and it auto-deploys on every push.
 
-**Note:** The image uses [`railway-entrypoint.sh`](railway-entrypoint.sh) so Apache listens on Railway’s `$PORT` and duplicate Apache MPM modules are avoided (common fix for PHP 8.4 on Railway). Our Dockerfile does **not** reinstall `gd` / `mysqli` / `zip` — `wordpress:php8.4-apache` already includes them; reinstalling them breaks the Docker build.
+**Note:** The image uses [`railway-entrypoint.sh`](railway-entrypoint.sh) so Apache listens on Railway’s `$PORT` via a config file under `/tmp` (Railway’s filesystem can make `/etc/apache2` read-only — editing it caused the process to exit before Apache started and healthchecks to show “service unavailable”). MPM cleanup is best-effort. Our Dockerfile does **not** reinstall `gd` / `mysqli` / `zip` — the base WordPress image already includes them.
+
+**Healthcheck:** [`railway.json`](railway.json) uses `/wp-includes/version.php` (HTTP 200). The site root `/` often returns **302**, which some platforms treat as an unhealthy healthcheck.
 
 ### 1. Create a Railway Project
 
