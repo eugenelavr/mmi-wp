@@ -40,7 +40,7 @@ docker exec -it mmi_app wp core install \
 ```
 .
 ├── docker-compose.yml     # Docker services configuration
-├── Dockerfile             # Custom PHP 8.3 image with WP-CLI
+├── Dockerfile             # Custom PHP 8.4 image with WP-CLI
 ├── install-wp.sh          # WordPress installation script
 └── wp-content/            # Mapped WordPress content
     ├── themes/
@@ -49,8 +49,8 @@ docker exec -it mmi_app wp core install \
 ```
 
 ## Services
-- **db**: MariaDB 10.11 (database)
-- **wordpress**: WordPress with PHP 8.3, Apache, WP-CLI
+- **db**: MariaDB 10.5 (database)
+- **wordpress**: WordPress with PHP 8.4, Apache, WP-CLI
 
 ## Installed PHP Extensions
 - gd (image processing)
@@ -62,7 +62,7 @@ docker exec -it mmi_app wp core install \
 **All 5 Phases Completed Successfully!**
 
 ### Phase 1: Local Docker Setup ✅
-- Docker environment with PHP 8.3, MariaDB
+- Docker environment with PHP 8.4, MariaDB
 - WP-CLI integration
 - Ukrainian locale
 
@@ -132,7 +132,7 @@ docker exec -it mmi_app wp theme activate mmi-portal --allow-root
 ```
 mmi-wp/
 ├── docker-compose.yml              # Docker configuration
-├── Dockerfile                      # Custom PHP 8.3 image
+├── Dockerfile                      # Custom PHP 8.4 image
 ├── install-wp.sh                   # WordPress installer
 ├── install-wptelegram.sh           # Telegram plugin
 ├── install-phase5-plugins.sh       # Final plugins
@@ -177,6 +177,8 @@ mmi-wp/
 ## Deploy to Railway
 
 Railway gives you a Vercel-like deploy experience: connect your GitHub repo and it auto-deploys on every push.
+
+**Note:** The image uses [`railway-entrypoint.sh`](railway-entrypoint.sh) so Apache listens on Railway’s `$PORT` and duplicate Apache MPM modules are avoided (common fix for PHP 8.4 on Railway). Our Dockerfile does **not** reinstall `gd` / `mysqli` / `zip` — `wordpress:php8.4-apache` already includes them; reinstalling them breaks the Docker build.
 
 ### 1. Create a Railway Project
 

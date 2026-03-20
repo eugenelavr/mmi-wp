@@ -1,10 +1,10 @@
 # Implementation Plan: MMI University Portal
 **Target Domain:** mmi.kpi.ua
-**Stack:** WordPress, Docker, PHP 8.3, MariaDB, WP-CLI.
+**Stack:** WordPress, Docker, PHP 8.4, MariaDB, WP-CLI.
 
 ## Phase 1: Local Docker Setup ✅
 - [x] Create `docker-compose.yml` with services: `db`, `wordpress`, `webserver`.
-- [x] Setup `Dockerfile` with PHP 8.3, WP-CLI, and necessary PHP extensions (gd, mysqli, zip).
+- [x] Setup `Dockerfile` with PHP 8.4, WP-CLI, and necessary PHP extensions (gd, mysqli, zip).
 - [x] Configure volume mapping for `./wp-content` and local theme folder.
 - [x] Install WordPress via WP-CLI with Ukrainian as default locale.
 
